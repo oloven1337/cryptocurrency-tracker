@@ -1,16 +1,20 @@
-import React from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import React from 'react'
+import {Routes, Route} from 'react-router-dom'
 
 import {Main} from './pages/main'
+import {Signup} from "./pages/signup";
+import {Header} from "./components/header";
+import {Cryptocurrency} from "./pages/cryptocurrency";
 
 export const App: React.FC = () => {
     return (
         <>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Main/>}/>
-                </Routes>
-            </BrowserRouter>
+            <Header/>
+            <Routes>
+                <Route path="/" element={<Main/>}/>
+                <Route path="/signup" element={<Signup/>}/>
+                <Route path="/cryptocurrency" element={<Cryptocurrency/>}/>
+            </Routes>
         </>
     )
 }
